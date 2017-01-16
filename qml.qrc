@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>MenuPanel.qml</file>
+        <file>MainBar.qml</file>
+        <file>VisualEditor_-_Icon_-_Menu.svg.png</file>
+        <file>PaginaPrueba.qml</file>
+        <file>PAginaPrueba2.qml</file>
+    </qresource>
+</RCC>
