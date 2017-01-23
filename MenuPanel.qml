@@ -28,6 +28,7 @@ Item {
 
        Button{
           text: qsTr("Test2")
+          id: btn_page2
           anchors.top: btnTest1.bottom
           anchors.left: parent.left;
           anchors.right: parent.right;
@@ -37,6 +38,17 @@ Item {
           }
        }
 
+       Button{
+           anchors.top:btn_page2.bottom;
+           anchors.topMargin: 10;
+           anchors.left: parent.left;
+           anchors.right: parent.right
+           text: qsTr("Drop Model")
+           onClicked: {
+               MasterClass.accion3();
+               panelHide();
+           }
+       }
    }
 
    NumberAnimation {

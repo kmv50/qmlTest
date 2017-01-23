@@ -22,14 +22,18 @@ void MasterPage::loadConteinerPage(){
         qDebug() << "loader no encontrdo";
         return;
     }
-    QStringList dataList;
-       dataList.append("Item 1");
-       dataList.append("Item 2");
-       dataList.append("Item 3");
-       dataList.append("Item 4");
+    QStringList *lst_test = new QStringList({
+                                   "Item 1",
+                                   "Item 2",
+                                   "Item 3",
+                                   "Item 4",
+                                   "Item 5"
+                               });
 
-       mainContext->setContextProperty("myModel", QVariant::fromValue(dataList));
+
+       mainContext->setContextProperty("myModel", *lst_test);
        Loader->setProperty("source","qrc:/PaginaPrueba.qml");
+       delete lst_test;
 
 }
 
@@ -41,4 +45,26 @@ void MasterPage::loadPaginaTest2(){
         return;
     }
     Loader->setProperty("source","qrc:/PAginaPrueba2.qml");
+}
+
+//QDeclarativePropertyMap
+void MasterPage::accion3(){
+   QVariant value = mainContext->contextProperty("myModel");
+   if(!value.isNull()){
+    qDebug() << value;
+    QStringList *lst_test = new QStringList({
+                                   "modelo 1",
+                                   "modelo 2",
+                                   "modelo 3",
+                                   "punt",
+                               });
+
+
+       mainContext->setContextProperty("myModel", *lst_test);
+       delete lst_test;
+
+       value = mainContext->contextProperty("myModel");
+       qDebug() << value;
+   }
+
 }
